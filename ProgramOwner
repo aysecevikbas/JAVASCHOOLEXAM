@@ -1,0 +1,22 @@
+//Here, information about the number of employees of the program owner will be defined.
+public class ProgramOwner extends Employee {
+    private int number_employees_programOwner;
+
+    public ProgramOwner(String name, String surname, String phoneNumber,int number_employees_programOwner) {
+        super(name, surname, phoneNumber);
+        this.number_employees_programOwner = number_employees_programOwner;
+
+    }
+
+    @Override
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("Number of people employed by the program owner in the show sector: " + number_employees_programOwner);
+
+    }
+    public void programRaising(int programRating) {
+
+        System.out.println("The ratings of"+" "+ getName() +"'s show program are increased by" +" "+ programRating + " %");
+    }
+
+}
