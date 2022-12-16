@@ -1,0 +1,21 @@
+public class Showman extends  Employee{
+    private String features;
+
+    public Showman(String name , String surname, String phoneNumber,String features) {
+        super(name, surname, phoneNumber);
+        this.features = features;
+
+    }
+    public void takePhoto(String emotion_type) {
+
+        System.out.println(getName() + " " +"Chef"+" " +"is"+" "+ emotion_type +" "+"taking photo with you. Please wait. :)");
+    }
+
+    @Override
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("Features known to fans of Showman:" + features);
+
+    }
+
+}
