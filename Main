@@ -1,0 +1,116 @@
+import java.util.Scanner;
+
+
+public class Main {
+    public static void main(String[] args) {
+        /*
+       Show Industry Information Program
+        
+        We created a superclass in the form of the Employee Class
+        
+        We have created a subclass named Showman which derives from the Employee Class.
+        We have created a subclass named ProgramOwner which derives from the Employee Class.
+
+        */
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Show Sector Information Program :) ...");
+
+        String actions = "Actions to be taken......\n"
+                + "1. Actions to be taken regarding the Showman\n"
+                + "2. Actions to be taken with the Program Owner\n"
+                + "Please type exit to exit the program";
+        System.out.println("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/");
+        System.out.println(actions);
+        System.out.println("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/");
+
+        while (true) {
+            System.out.print("Select the action to be taken : ");
+            String action = scanner.nextLine();
+
+            if (action.equals("exit")){
+
+                System.out.println("We wish you a good day. Exiting the Program!");
+                break;
+
+            }
+            else if (action.equals("1")){
+                Showman showman = new Showman("Somer","Sivrioğlu", "5498908888","humoristic, fashion icon,loves to cook,experimenting new dishes,interests in different cultures");
+                String showman_action = "1. Take pictures together\n"
+                        +"2. Showman's Information\n"
+                        + "Please type exit to exit the program";
+                System.out.println(showman_action);
+
+                while (true) {
+                    System.out.print("Select the action to be taken :");
+                    String s_action = scanner.nextLine();
+
+                    if (s_action.equals("exit")) {
+                        System.out.println("Exiting actions about the Showman!");
+                        break;
+                    }
+                    else if (s_action.equals("1")){
+
+                        System.out.print("How do you feel yourself? : ");
+                        String emotion_type = scanner.nextLine();
+                        showman.takePhoto(emotion_type);
+
+                    }
+                    else if (s_action.equals("2")){
+
+                        showman.showInfo();
+                    }
+                    else {
+                        System.out.println("Invalid Showman Action!");
+                    }
+
+                }
+
+            }
+            else if (action.equals("2")) {
+                ProgramOwner programOwner = new ProgramOwner("Acun","Ilıcalı", "02122101010", 1850);
+
+                String programOwner_action = "Actions to be taken by the Program Owner\n"
+                        + "1. Raising program ratings\n"
+                        + "2. I want to show Program Owner Information\n"
+                        + "Please type exit to exit the program";
+                System.out.println(programOwner_action);
+
+                while (true) {
+                    System.out.println("Select the action to be taken : ");
+                    String p_action = scanner.nextLine();
+
+                    if (p_action.equals("exit")){
+                        System.out.println("Exiting actions about the Program Owner!");
+                        break;
+
+                    }
+                    else if (p_action.equals("1")) {
+                        System.out.print("How much rating do you want the Program Owner to get for the show:");
+                        int programRating = scanner.nextInt();
+                        scanner.nextLine();
+                        programOwner.programRaising(programRating);
+
+                    }
+                    else if (p_action.equals("2")){
+                        programOwner.showInfo();
+
+                    }
+                    else {
+                        System.out.println("Invalid Program Owner Action!");
+                    }
+
+
+                }
+
+            }
+            else {
+                System.out.println("Invalid Action!");
+            }
+
+
+        }
+
+
+    }
+}
